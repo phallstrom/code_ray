@@ -15,7 +15,7 @@ From your radiant project's path, do
 
 - Run the installation script
 
-  rake radiant:extensions:code_ray:update
+  RAILS_ENV=production rake radiant:extensions:code_ray:update
 
 - Include stylesheets
 

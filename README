@@ -7,6 +7,10 @@ of Python's Pygments.
 
 == Installation
 
+- Install CodeRay
+
+  sudo gem install coderay
+
 - Get the extension
 
 From your radiant project's path, do

@@ -24,6 +24,8 @@ module CodeRayTags
     </ul>
     *Usage:* 
     <pre><code><r:code language="html" [line_numbers="true"]>...source code goes here...</r:code></code></pre>
+    *Note:*
+    If you are using Textile be sure to add <notexttile>...</notextile> tags around the <r:code /> call.
   }
   tag 'code' do |tag|
     lang = tag.attributes['language'] || 'plaintext'

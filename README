@@ -40,6 +40,8 @@ To add highlighted code to a page, use the <r:code [language] [line_numbers]> ta
   end
   </r:code>
 
+Note: If you are using Textile be sure to add <notexttile>...</notextile> tags around the <r:code /> call.
+
 == Author
 
 Copyright (c) 2008 Philip Hallstrom (http://pjkh.com), released under the MIT license

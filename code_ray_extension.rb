@@ -1,7 +1,7 @@
 require 'coderay'
 
 class CodeRayExtension < Radiant::Extension
-  version "1.0"
+  version "1.1"
   description "Syntax highlighting using the CodeRay ruby gem."
   url "http://github.com/phallstrom/code_ray"
   

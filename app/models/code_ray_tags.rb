@@ -23,13 +23,15 @@ module CodeRayTags
       <li>yaml</li>
     </ul>
     *Usage:* 
-    <pre><code><r:code language="html" [line_numbers="true"]>...source code goes here...</r:code></code></pre>
-    *Note:*
-    If you are using Textile be sure to add <notexttile>...</notextile> tags around the <r:code /> call.
+    <pre><code><r:code language="html" [line_numbers="true"] [textile="true"]>...source code goes here...</r:code></code></pre>
+    *Note:* If you are using Textile be sure to add <notexttile>...</notextile> tags around the <r:code /> call or
+    pass the textile="true" attribute.
   }
   tag 'code' do |tag|
     lang = tag.attributes['language'] || 'plaintext'
     line_numbers = tag.attributes.key?('line_numbers') ? :inline : nil
-    return CodeRay.scan(tag.expand.to_s.strip, lang.to_sym).html(:wrap => :div, :line_numbers => line_numbers )
+    code = CodeRay.scan(tag.expand.to_s.strip, lang.to_sym).html(:wrap => :div, :line_numbers => line_numbers )
+    code = "<notextile>#{code}</notextile>" if tag.attributes.key?('textile')
+    code 
   end
 end

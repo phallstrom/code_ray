@@ -28,7 +28,7 @@ All you need to do is to include it in your layout.
 
 == Usage
 
-To add highlighted code to a page, use the <r:code [language] [line_numbers]> tag like so:
+To add highlighted code to a page, use the <r:code [language] [line_numbers] [textile]> tag like so:
 
   <r:code language="ruby" line_numbers="true">
   class Foo
@@ -40,7 +40,8 @@ To add highlighted code to a page, use the <r:code [language] [line_numbers]> ta
   end
   </r:code>
 
-Note: If you are using Textile be sure to add <notexttile>...</notextile> tags around the <r:code /> call.
+Note: If you are using Textile be sure to add <notexttile>...</notextile> tags around the <r:code /> call or
+pass the textile="true" attribute.
 
 == Author
 

@@ -29,9 +29,9 @@ module CodeRayTags
   }
   tag 'code' do |tag|
     lang = tag.attributes['language'] || 'plaintext'
-    line_numbers = tag.attributes.key?('line_numbers') ? :inline : nil
+    line_numbers =  boolean_attr_or_error(tag, 'line_numbers', 'false') ? :inline : nil
     code = CodeRay.scan(tag.expand.to_s.strip, lang.to_sym).html(:wrap => :div, :line_numbers => line_numbers )
-    code = "<notextile>#{code}</notextile>" if tag.attributes.key?('textile')
+    code = "<notextile>#{code}</notextile>" if boolean_attr_or_error(tag, 'textile', 'false')
     code 
   end
 end
